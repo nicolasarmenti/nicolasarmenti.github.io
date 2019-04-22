@@ -9,11 +9,22 @@
 		<title>Nicolás Armenti</title>
 		<meta name="description" content="nicolás armenti">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- For IE 9 and below. ICO should be 32x32 pixels in size -->
+		<!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
+
+		<!-- Touch Icons - iOS and Android 2.1+ 180x180 pixels in size. --> 
+		<link rel="apple-touch-icon-precomposed" href="touchicon.png">
+
+		<!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
+		<link rel="icon" type="image/png" href="favicon.png">
 		
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<link rel="stylesheet" href="./css/master.min.css">
 		
+		<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+		<script src="./js/panel.js"></script>
 		<script src="./js/main.js"></script>
 	<body>
 		<!--[if lt IE 7]>
@@ -38,17 +49,15 @@
 
 			<div class="bottom">
 					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/narmenti/" class="icon fab fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/nicolasarmenti" class="icon fab fa-github"><span class="label">Github</span></a></li>
-						<li><a href="mailto:nicolasarmenti@gmaill.com" class="icon fas fa-envelope"><span class="label">Email</span></a></li>
-						
-						<!--
-						<li><a href="#" class="icon fab fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fab fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fab fa-dribbble"><span class="label">Dribbble</span></a></li>
-						-->
+						<li><a href="https://www.linkedin.com/in/narmenti/" target="_blank" class="icon fab fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/nicolasarmenti" target="_blank" class="icon fab fa-github"><span class="label">Github</span></a></li>
+						<li><a href="mailto:nicolasarmenti@gmaill.com" target="_blank" class="icon fas fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 			</div>
+		</div>
+
+		<div id="headerToggle">
+			<a href="#header" class="toggle fas fa-bars"></a>
 		</div>
 
 		<div id="main">

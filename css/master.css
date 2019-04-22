@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
 * {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-size: 100%;
@@ -10,8 +10,8 @@
 }
 
 *:before, *:after {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -27,7 +27,46 @@ a {
   text-decoration: none;
 }
 
+#headerToggle {
+  -webkit-transition: -webkit-transform 0.35s ease;
+  transition: -webkit-transform 0.35s ease;
+  transition: transform 0.35s ease;
+  transition: transform 0.35s ease, -webkit-transform 0.35s ease;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin: .5em;
+  z-index: 11;
+}
+
+#headerToggle .toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  outline: 0;
+  border: 0;
+}
+
+#headerToggle .toggle:before {
+  font-size: 1em;
+  line-height: 1em;
+  padding: .3em .8em;
+  background: rgba(128, 136, 144, 0.5);
+  border-radius: 0.35em;
+  text-align: center;
+  color: #fff;
+}
+
 #header {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translateX(-275px);
+          transform: translateX(-275px);
+  -webkit-transition: -webkit-transform 0.35s ease;
+  transition: -webkit-transform 0.35s ease;
+  transition: transform 0.35s ease;
+  transition: transform 0.35s ease, -webkit-transform 0.35s ease;
   display: block;
   background: #222729;
   -webkit-box-shadow: inset -0.25em 0 0.25em 0 rgba(0, 0, 0, 0.1);
@@ -40,7 +79,7 @@ a {
   text-align: right;
   top: 0;
   width: 275px;
-  z-index: 10002;
+  z-index: 11;
 }
 
 #header .icon {
@@ -61,7 +100,7 @@ a {
 
 #header .top #logo {
   position: relative;
-  margin: 1.75em 1.5em 1.5em 1.5em;
+  margin: 1.75em 1em 1.5em;
   min-height: 48px;
   cursor: default;
 }
@@ -100,6 +139,10 @@ a {
   padding: 0.5em 1.25em 0.5em 1.25em;
   display: block;
   color: #909293;
+}
+
+#header .top nav ul li a:hover span {
+  color: white;
 }
 
 #header .top nav ul li a:active {
@@ -169,5 +212,32 @@ a {
 
 #header .bottom ul li .label {
   display: none;
+}
+
+body {
+  width: 100%;
+  overflow: hidden;
+}
+
+body.header-visible #main, body.header-visible #headerToggle {
+  -webkit-transform: translateX(275px);
+          transform: translateX(275px);
+}
+
+body.header-visible #header {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+#main {
+  height: 200vh;
+  background-color: #dddddd;
+  padding: 2em;
+  -webkit-transition: -webkit-transform 0.35s ease;
+  transition: -webkit-transform 0.35s ease;
+  transition: transform 0.35s ease;
+  transition: transform 0.35s ease, -webkit-transform 0.35s ease;
+  width: 100%;
+  z-index: 10;
 }
 /*# sourceMappingURL=master.css.map */

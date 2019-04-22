@@ -1,4 +1,36 @@
+$header-size: 275px
+$transition-header: transform 0.35s ease
+$index: 10
+
+#headerToggle
+	transition: $transition-header
+	display: block
+	position: fixed
+	left: 0
+	top: 0
+	margin: .5em
+	z-index: $index + 1
+
+	.toggle
+		position: absolute
+		left: 0
+		top: 0
+		outline: 0
+		border: 0
+
+		&:before
+			font-size: 1em
+			line-height: 1em
+			padding: .3em .8em
+			background: rgba(128, 136, 144, 0.5)
+			border-radius: 0.35em
+			text-align: center
+			color: #fff
+
 #header
+	backface-visibility: hidden
+	transform: translateX($header-size * -1)
+	transition: $transition-header
 	display: block
 	background: #222729
 	box-shadow: inset -0.25em 0 0.25em 0 rgba(0, 0, 0, 0.1)
@@ -9,8 +41,8 @@
 	position: fixed
 	text-align: right
 	top: 0
-	width: 275px
-	z-index: 10002;
+	width: $header-size
+	z-index: $index + 1
 
 	.icon
 		transition: color 0.35s ease-in-out
@@ -24,7 +56,7 @@
 
 		#logo
 			position: relative
-			margin: 1.75em 1.5em 1.5em 1.5em
+			margin: 1.75em 1em 1.5em
 			min-height: 48px
 			cursor: default
 
@@ -58,6 +90,10 @@
 						padding: 0.5em 1.25em 0.5em 1.25em
 						display: block
 						color: #909293
+
+						&:hover
+							span
+								color: white
 
 						&:active
 							background: rgba(0, 0, 0, 0.15)

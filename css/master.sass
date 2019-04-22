@@ -2,3 +2,20 @@
 @import navbar
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600")
 
+body
+	width: 100%
+	overflow: hidden
+
+	&.header-visible
+		#main,#headerToggle
+			transform: translateX($header-size)
+		#header
+			transform: translateX(0)
+			
+#main
+	height: 200vh
+	background-color: #dddddd
+	padding: 2em
+	transition: $transition-header
+	width: 100%
+	z-index: $index
